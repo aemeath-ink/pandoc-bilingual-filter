@@ -1,0 +1,45 @@
+/* bilingual.css — companion stylesheet for bilingual.lua */
+
+.bilingual-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5em;
+  margin: 1.6em 0;
+  align-items: start;
+}
+
+.bilingual-source,
+.bilingual-target {
+  font-family: 'Source Serif Pro', 'Source Han Serif SC', Georgia, serif;
+  line-height: 1.7;
+}
+
+.bilingual-source {
+  border-right: 1px solid rgba(0,0,0,0.08);
+  padding-right: 2.5em;
+}
+
+.bilingual-target[lang="zh"],
+.bilingual-target[lang="zh-Hant"],
+.bilingual-target[lang="zh-Hans"] {
+  font-family: 'Source Han Serif SC', 'Songti SC', 'STSong', serif;
+}
+
+@media print {
+  .bilingual-row {
+    page-break-inside: avoid;
+  }
+}
+
+@media (max-width: 720px) {
+  .bilingual-row {
+    grid-template-columns: 1fr;
+  }
+  .bilingual-source {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding-right: 0;
+    padding-bottom: 1.2em;
+    margin-bottom: 1.2em;
+  }
+}
