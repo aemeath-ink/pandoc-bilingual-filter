@@ -29,7 +29,8 @@ function Div(div)
   local src = get_classed_child(div, 'source')
   local tgt = get_classed_child(div, 'target')
   if not src or not tgt then
-    io.stderr:write('[bilingual] malformed ::: pair block — dropping\n')
+    -- TODO: use pandoc.log.warn once we drop 2.x support
+      io.stderr:write('[bilingual] malformed ::: pair block — dropping\n')
     return {}
   end
 
